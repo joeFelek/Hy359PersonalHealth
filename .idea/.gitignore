@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Default ignored files
 /shelf/
 /workspace.xml
@@ -7,3 +8,6 @@
 /dataSources/
 /dataSources.local.xml
 */target/*
+=======
+target/
+>>>>>>> 30ed886 (meow)
