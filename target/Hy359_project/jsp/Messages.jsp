@@ -43,7 +43,6 @@
             currentUserId = edt.databaseGetDoctorId(currentUserName);
 
         conversations = ect.databaseGetConversations(currentUserType + "_id", currentUserId);
-        System.out.println("hello");
         convNames.add("System");
         messages.add(emt.databaseGetSystemMessages(currentUserType, currentUserId));
         for (Conversation conv : conversations) {

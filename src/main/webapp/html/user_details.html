@@ -1,5 +1,11 @@
+<div class="container">
+    <h3 style="font-weight:bold;padding-bottom: 15px">Health</h3>
+    <p>Based on your gender and height your ideal weight calculated with the Devine method is
+        <span id="idealWeight"></span>.<br> Your current BMI(Body Mass Index) is <span id="bmi">
+        </span> which is <span id="health"></span>.</p>
 
-<form id="update-form" name="update-form" class="container" onsubmit="updatePost();return false;">
+    <h3 style="font-weight:bold; padding-bottom: 15px;padding-top: 20px">Info</h3>
+    <form id="update-form" name="update-form" class="container" onsubmit="updatePost();return false;">
         <div class="row form-group" id="Username">
             <div class="form-group col-md-6">
                 <label for="username-update">Username</label>
@@ -9,7 +15,8 @@
         <div class="form-group row" id="Email">
             <div class="form-group col-md-6">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" onchange="checkAvailability()" required>
+                <input type="email" class="form-control" id="email" name="email" onchange="checkAvailability()"
+                       required>
                 <small id="email-error-msg" class="form-text" style="color: red"></small>
             </div>
         </div>
@@ -43,7 +50,7 @@
                 <input type="text" name="amka" id="amka" class="form-control" readonly>
             </div>
             <div class="form-group col-xl-4" id="gender">
-                <div class="form-group" >
+                <div class="form-group">
                     <label for="gender">Gender</label>
                     <div></div>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -351,8 +358,10 @@
             <div class="form-group col-md-3">
                 <label for="bloodDonor">Blood Donor</label>
                 <div></div>
-                <label class="radio-inline" for="positive"><input id="positive" type="radio" name="blooddonor" value="1">Yes</label>
-                <label class="radio-inline" for="negative"><input id="negative" type="radio" name="blooddonor" value="0">No</label>
+                <label class="radio-inline" for="positive"><input id="positive" type="radio" name="blooddonor"
+                                                                  value="1">Yes</label>
+                <label class="radio-inline" for="negative"><input id="negative" type="radio" name="blooddonor"
+                                                                  value="0">No</label>
             </div>
             <div class="form-group col-md-3">
                 <label for="bloodType">Blood Type</label>
@@ -375,14 +384,19 @@
             <div id="doctorExtra1" class="form-group col-md-3">
                 <label for="doctorExtra">Profession</label>
                 <div></div>
-                <label class="radio-inline" for="pathologist"><input id="pathologist" type="radio" name="specialty" value="Pathologist">Pathologist</label>
-                <label class="radio-inline" for="general-doc"><input id="general-doc" type="radio" name="specialty" value="GeneralDoctor" checked>General Doctor</label>
+                <label class="radio-inline" for="pathologist"><input id="pathologist" type="radio" name="specialty"
+                                                                     value="Pathologist">Pathologist</label>
+                <label class="radio-inline" for="general-doc"><input id="general-doc" type="radio" name="specialty"
+                                                                     value="GeneralDoctor" checked>General
+                    Doctor</label>
             </div>
             <div id="doctorExtra2" class="form-group col-md-6">
-                <label for="doc-info" hidden></label><textarea name="doctor_info" id="doc-info" rows="4" cols="48" placeholder="Doctor's information"></textarea>
+                <label for="doc-info" hidden></label><textarea name="doctor_info" id="doc-info" rows="4" cols="48"
+                                                               placeholder="Doctor's information"></textarea>
             </div>
         </div>
         <div class="form-group" id="Submit">
             <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Update">
         </div>
     </form>
+</div>

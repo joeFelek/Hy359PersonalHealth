@@ -162,6 +162,8 @@ function doUpdateInit(response) {
     } else {
         $('#DoctorExtra').html('')
     }
+    getIdealWeight(jsonRes.gender, jsonRes.height)
+    bmiGet(jsonRes.weight, jsonRes.height, jsonRes.birthdate)
     $('#username-update ').val(jsonRes.username)
     $('#email').val(jsonRes.email)
     $('#pwd').val(jsonRes.password)
@@ -183,27 +185,6 @@ function doUpdateInit(response) {
     $('input[name="blooddonor"][value="' + jsonRes.blooddonor + '"]').prop('checked', true);
 }
 
-function getFitnessDetails() {
-    const xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            $('#main-container').load("html/fitness.html")
-            const res = JSON.parse(xhr.responseText)
-            if (res.weight.toString() === '0.0' || res.height.toString() === '0') {
-                $('#fitness-msg').html('Please provide your weight and height if you want to see ur BMI and ideal weight')
-                $('#fitness-result-container').hide()
-                return;
-            }
-            bmiGet(res.weight, res.height, res.birthdate)
-            getIdealWeight(res.gender, res.height)
-        } else if (xhr.status !== 200) {
-            alert(xhr.status)
-        }
-    };
-    xhr.open('GET', 'updateInit');
-    xhr.send();
-}
-
 function bmiGet(weight, height, birthdate) {
     const age = getAge(birthdate.toString())
     const xhr = new XMLHttpRequest();
@@ -211,7 +192,10 @@ function bmiGet(weight, height, birthdate) {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             const res = JSON.parse(xhr.responseText)
-            $('#bmi').html(res.data.bmi + ' ' + res.data.health)
+            $('#bmi').html(res.data.bmi)
+            let color = (res.data.health === 'Normal') ? '#51b27e' : '#D11A2A'
+            $('#health').html('<span style="color:'+color+'">'+res.data.health+'</span>')
+
         }
     });
     xhr.open("GET", "https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&weight=" + weight + "&height=" + height);
@@ -376,6 +360,71 @@ $(document).ready(function () {
     $('#show-all-notifications-btn').click(function () {
         $('#main-container').load('jsp/Messages.jsp')
     })
+
+    $(function () {
+        const data = null;
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                handleCovidStats(JSON.parse(this.responseText))
+            }
+        });
+        xhr.open("GET", "https://covid-193.p.rapidapi.com/statistics?country=greece");
+        xhr.setRequestHeader("x-rapidapi-host", "covid-193.p.rapidapi.com");
+        xhr.setRequestHeader("x-rapidapi-key", "2f121f595bmsh790b45bdee800eap12ab30jsn5834493fb370");
+
+        xhr.send(data);
+    })
+
+
+    $(function () {
+        const data = null;
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                handleMedicalNews(JSON.parse(this.responseText))
+            }
+        });
+        xhr.open("GET", "https://google-search3.p.rapidapi.com/api/v1/news/q=medical+greece");
+        xhr.setRequestHeader("x-user-agent", "desktop");
+        xhr.setRequestHeader("x-proxy-location", "EU");
+        xhr.setRequestHeader("x-rapidapi-host", "google-search3.p.rapidapi.com");
+        xhr.setRequestHeader("x-rapidapi-key", "2f121f595bmsh790b45bdee800eap12ab30jsn5834493fb370");
+
+        xhr.send(data);
+    })
+
+    function handleCovidStats(res) {
+        let cases = res.response[0].cases;
+        let deaths = res.response[0].deaths;
+        let tests = res.response[0].tests;
+        $('#new-cases').append(' ' + cases.new);
+        $('#active-cases').append(' ' + cases.active);
+        $('#critical-cases').append(' ' + cases.critical);
+        $('#recovered-cases').append(' ' + cases.recovered);
+        $('#total-cases').append(' ' + cases.total);
+        $('#new-deaths').append(' ' + deaths.new);
+        $('#total-deaths').append(' ' + deaths.total);
+        $('#tests').append(' ' + tests.total);
+    }
+
+    function handleMedicalNews(res) {
+        for (i = 1; i < 4; i++) {
+            let news = res.entries[i - 1]
+            let title = news.summary.split('>')[1].split('<')[0];
+            let src = news.source.title;
+            let date = news.published.split(' ')
+            let d = date[1] + " " + date[2] + " " + date[3]
+            $('#news' + i).attr('href', news.link)
+            $('#news' + i).html(title)
+            $('#news-date' + i).html(d)
+            $('#news-src' + i).html(src)
+        }
+
+    }
+
 
 });
 
