@@ -1,0 +1,458 @@
+body {
+    font-family: ProximaNovaSemiBold, sans-serif;
+    color: #4D4D4D;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #51b27e;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #51b27e;
+  outline: 0 none;
+}
+
+#Username {
+    margin-top: 50px;
+}
+#username,
+#email {
+    max-width: 390px;
+}
+
+#Password,
+#DoctorExtra,
+#Name,
+#DateGender,
+#HeightWeight,
+#CountryCityAreaCode,
+#AddressPhone,
+#BloodDonor,
+#Submit, 
+#Terms {
+    max-width: 820px;
+}
+
+#p1,
+#p2,
+#Address {
+    max-width: 410px;
+}
+
+#username,
+#email,
+#password,
+#cpassword,
+#doctorExtra2,
+#firstName,
+#lastName,
+#birth,
+#amka,
+#country,
+#city,
+#areaCode,
+#phone,
+#address,
+#height,
+#weight,
+#bloodType,
+#gender {
+    max-width: 400px;
+}
+
+.btn.active {
+    color: #ffffff !important;
+    border-color: #51b27e !important;
+    background-color: #51b27e !important;
+    box-shadow: none;
+}
+
+.btn:hover {
+    color: #ffffff !important;
+    border-color: #409065 !important;
+    background-color: #409065 !important;
+    box-shadow: 0 0 8px #409065;
+}
+.btn {
+    color: #51b27e;
+    border-color: #51b27e;
+    margin-right: 0;
+}
+
+.type {
+    width: 140px;
+}
+
+.gender {
+    width: 88px;
+}
+
+.form-select {
+    width: 100%;
+    height: 37px;
+    border-color: #bdbdbd;
+}
+
+.radio-inline {
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #51b27e !important;
+    border-color: #51b27e !important;
+}
+.custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25);
+}
+.custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+    border-color: #bdbdbd;
+}
+.custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+    background-color: #C8FFC8;
+    border-color: #51b27e;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #51b27e;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.btn-primary {
+    background-color: #51b27e;
+    color: #fff;
+}
+
+#submit {
+    width: 170px;
+    float: right;
+}
+
+#Submit {
+    margin-bottom: 100px;
+}
+
+#Terms {
+    text-align: right;
+}
+
+.icon {
+    border: none;
+    float: right;
+    margin-top: -37px;   
+}
+
+.icon:hover {
+    box-shadow: none;
+}
+
+#search-location {
+    position:absolute;
+    right: 40px;
+}
+
+#pass-test {
+    font-size: 11px;
+    float: right;
+    margin-top: -27px;
+    margin-right: 43px;
+}
+
+#DoctorExtra {
+    display: none;
+}
+
+#doctorExtra2 {
+  padding-top: 5px;
+}
+
+#doc-info {
+    max-width: 400px;
+    height: 100px;  
+}
+
+@media screen and (max-width: 540px) {
+   #doc-info {
+       width: 281px;
+   } 
+}
+
+#conditions-msg,
+#no-match-pwd,
+#amka-error,
+#show-map-error {
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+
+#map-container {
+    position: relative;
+    background-color: #51b27e;
+    box-shadow: 0 0 8px #aaaaaa;
+}
+
+#Map {
+    display: none;
+    position: absolute;
+    bottom: 90px;
+    right: 0;
+    width: 100%;
+    height: 40%;
+    min-width: 100px;
+    min-height: 500px; 
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+    #Map {
+        min-height: 281px;   
+    } 
+}
+@media screen and (max-width: 1199px) {
+   
+    #Map {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        padding-bottom: 20px;
+    } 
+
+}
+
+#close-map {
+    z-index: 1;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    right: 20px;
+    top: 30px;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: none;
+}
+
+#close-map:hover {
+    border: none;
+    background-color: rgb(255, 0, 0, 0.7) !important;
+    box-shadow: none;
+}
+
+#close-map.active {
+    border: none;
+    background-color: rgba(255, 0, 0, 0.7) !important;
+    box-shadow: none;
+    background-color: red;
+}
+
+#close-map-icon {
+    color: white;
+    position: relative;
+    right: 0.5px;
+}
+
+#title1 {
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 40px;
+}
+
+.title {
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: -44px;
+}
+
+#title22 {
+    margin-top:-50px;
+}
+
+@media screen and (max-width: 1199px) {
+
+    #title1 {
+        display: none;
+    }
+}
+
+.ol-popup {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+  }
+  .ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+  }
+  .ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+  }
+  .ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+  }
+  .ol-popup-closer:after {
+    content: "✖";
+  }
+
+
+#details-user,
+#details-type,
+#details-email,
+#details-password,
+#details-fullname,
+#details-birth,
+#details-amka,
+#details-gender,
+#details-country,
+#details-city,
+#details-address,
+#details-lat,
+#details-lon,
+#details-tel,
+#details-heigth,
+#details-weigth,
+#details-donor,
+#details-blood,
+#details-specialty,
+#details-info,
+#details-certified {
+    padding-left: 3px;
+    font-weight: bold;
+}
+
+#details-user-title,
+#details-type-title,
+#details-email-title,
+#details-password-title,
+#details-fullname-title,
+#details-birth-title,
+#details-amka-title,
+#details-gender-title,
+#details-country-title,
+#details-city-title,
+#details-address-title,
+#details-lat-title,
+#details-lon-title,
+#details-tel-title,
+#details-heigth-title,
+#details-weigth-title,
+#details-donor-title,
+#details-blood-title,
+#details-specialty-title,
+#details-info-title,
+#details-certified-title {
+    padding-left: 3px;
+    color: #FFF6F3;
+}
+
+#details-user-container,
+#details-type-container,
+#details-email-container,
+#details-password-container,
+#details-fullname-container,
+#details-birth-container,
+#details-amka-container,
+#details-gender-container,
+#details-country-container,
+#details-city-container,
+#details-address-container,
+#details-lat-container,
+#details-lon-container,
+#details-tel-container,
+#details-heigth-container,
+#details-weigth-container,
+#details-donor-container,
+#details-blood-container,
+#details-specialty-container,
+#details-info-container,
+#details-certified-container {  
+    padding-left: 5px;
+    padding-right: 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#details-msg-container {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#details-msg {
+    color: #FFF6F3;
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+}
+
+#details-user-type-container {
+    padding-top: 50px;
+}
+
