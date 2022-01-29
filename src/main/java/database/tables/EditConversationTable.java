@@ -28,7 +28,7 @@ public class EditConversationTable {
         ArrayList<Conversation> rds = new ArrayList<>();
         ResultSet rs;
         try {
-            rs = stmt.executeQuery("SELECT * FROM Conversation WHERE " + var + " =" + id);
+            rs = stmt.executeQuery("SELECT * FROM conversation WHERE " + var + " =" + id);
             while (rs.next()) {
                 String json = DB_Connection.getResultsToJSON(rs);
                 Gson gson = new Gson();
