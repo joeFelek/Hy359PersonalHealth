@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Create new Message row in table
+ */
 @WebServlet(name = "SendMessage", value = "/SendMessage")
 public class SendMessage extends HttpServlet {
     @Override

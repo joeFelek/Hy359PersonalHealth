@@ -1,7 +1,6 @@
 package servlets;
 
 import com.google.gson.Gson;
-import database.tables.EditConversationTable;
 import database.tables.EditDoctorTable;
 import database.tables.EditMessageTable;
 import database.tables.EditSimpleUserTable;
@@ -22,6 +21,9 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Objects;
 
+/**
+ * Submit signup form, Create new client or doctor
+ */
 @WebServlet(name = "Submit", value = "/Submit")
 public class Submit extends HttpServlet {
     private Double lon = 0.0;

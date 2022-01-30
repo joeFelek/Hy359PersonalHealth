@@ -16,6 +16,10 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
+/**
+ * return all rendezvous with status free for only one specific doctor
+ */
 @WebServlet(name = "ShowAvailableRendezvous", value = "/ShowAvailableRendezvous")
 public class ShowAvailableRendezvous extends HttpServlet {
     @Override

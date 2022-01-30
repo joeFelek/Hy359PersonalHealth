@@ -13,6 +13,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Create new Conversation row and send a hello message to receiver
+ */
 @WebServlet(name = "StartConversation", value = "/StartConversation")
 public class StartConversation extends HttpServlet {
     @Override

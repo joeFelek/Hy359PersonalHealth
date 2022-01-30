@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Admin Delete User
+ */
+
 @WebServlet(name = "AdminDelete", value = "/AdminDelete")
 public class AdminDelete extends HttpServlet {
 

@@ -12,6 +12,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Mark messages as seen, set Message table seen to 1
+ */
 @WebServlet(name = "MessageSeen", value = "/MessageSeen")
 public class MessageSeen extends HttpServlet {
     @Override

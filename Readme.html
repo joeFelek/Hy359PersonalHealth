@@ -1,0 +1,1045 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
+    @font-face {
+        font-family: octicons-anchor;
+        src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+    }
+
+    body {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        font-family: Helvetica, Arial, freesans, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        word-wrap: break-word;
+        margin: 0 30px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    img {
+        border: 0;
+    }
+
+    input {
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        line-height: normal;
+    }
+
+    html input[disabled] {
+        cursor: default;
+    }
+
+    input[type="checkbox"] {
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    body * {
+        box-sizing: border-box;
+    }
+
+    input {
+        font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover, a:active {
+        text-decoration: underline;
+    }
+
+    hr {
+        height: 1px;
+        padding: 0;
+        margin: 20px 0;
+        border: 0 none;
+    }
+
+    hr:before {
+        display: table;
+        content: "";
+    }
+
+    hr:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    blockquote {
+        margin: 0;
+    }
+
+    ul, ol {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    ol ol, ul ol {
+        list-style-type: lower-roman;
+    }
+
+    ul ul ol, ul ol ol, ol ul ol, ol ol ol {
+        list-style-type: lower-alpha;
+    }
+
+    dd {
+        margin-left: 0;
+    }
+
+    .octicon {
+        font: normal normal normal 16px/1 octicons-anchor;
+        display: inline-block;
+        text-decoration: none;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .octicon-link:before {
+        content: '\f05c';
+    }
+
+    *:first-child {
+        margin-top: 0 !important;
+    }
+
+    *:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .anchor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        padding-right: 6px;
+        padding-left: 30px;
+        margin-left: -30px;
+    }
+
+    .anchor:focus {
+        outline: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        position: relative;
+        margin-top: 1em;
+        margin-bottom: 16px;
+        font-weight: bold;
+        line-height: 1.4;
+        color: #5f974c !important;
+    }
+
+    h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link {
+        display: none;
+        color: #000;
+        vertical-align: middle;
+    }
+
+    h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+        padding-left: 8px;
+        margin-left: -30px;
+        text-decoration: none;
+    }
+
+    h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link {
+        display: inline-block;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        padding-top: 0.6em;
+    }
+
+    h1 .anchor {
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        line-height: 1.2;
+        padding-top: 0.6em;
+    }
+
+    h2 .anchor {
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: 1.3em;
+        line-height: 1;
+        padding-top: 0.6em;
+    }
+
+    h3 .anchor {
+        line-height: 1.2;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h4 .anchor {
+        line-height: 1.2;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h5 .anchor {
+        line-height: 1.1;
+    }
+
+    h6 {
+        font-size: 1em;
+    }
+
+    h6 .anchor {
+        line-height: 1.1;
+    }
+
+    p, blockquote, ul, ol, dl, table, pre {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    ul, ol {
+        padding-left: 2em;
+    }
+
+    ul ul, ul ol, ol ol, ol ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    dl {
+        padding: 0;
+    }
+
+    dl dt {
+        padding: 0;
+        margin-top: 16px;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    dl dd {
+        padding: 0 16px;
+        margin-bottom: 16px;
+    }
+
+    blockquote {
+        padding: 10px 10px 10px 16px;
+        border-left: 2px solid;
+        border-radius: 0 3px 3px 0;
+    }
+
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: normal;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 1em;
+    }
+
+    table th {
+        font-weight: bold;
+    }
+
+    table th, table td {
+        padding: 6px 13px;
+        background: transparent;
+    }
+
+    table tr {
+        border-top: 1px solid;
+    }
+
+    img {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    code {
+        font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        padding: 0.2em 0.4em;
+        margin: 2px;
+        border-radius: 3px;
+    }
+
+    code {
+        padding: 0;
+        margin: 0;
+        font-size: 100%;
+        word-break: normal;
+        white-space: pre;
+        background: transparent;
+        border: 0;
+    }
+
+    .highlight {
+        margin-bottom: 16px;
+    }
+
+    .highlight pre, pre {
+        font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        padding: 16px;
+        overflow: auto;
+        line-height: 1.45;
+        border-radius: 3px;
+    }
+
+    pre code {
+        display: inline;
+        max-width: initial;
+        padding: 0;
+        margin: 0;
+        overflow: initial;
+        line-height: inherit;
+        word-wrap: normal;
+        background-color: transparent;
+        border: 0;
+    }
+
+    pre code:before, pre code:after {
+        content: normal;
+    }
+
+    kbd {
+        font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        padding: 0.2em 0.4em;
+        margin: 2px;
+        border-radius: 3px;
+    }
+
+    .task-list-item {
+        list-style-type: none;
+    }
+
+    .task-list-item + .task-list-item {
+        margin-top: 3px;
+    }
+
+    .task-list-item input {
+        margin: 0 0.35em 0.25em -0.6em;
+        vertical-align: middle;
+    }
+
+    :checked + .radio-label {
+        z-index: 1;
+        position: relative;
+    }
+
+    span.user-del {
+        text-decoration: line-through;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        -webkit-box-shadow: -1px 0 0 #ededed;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    } </style>
+    <style>body {
+        background-color: rgba(1, 22, 39, 255.0);
+        font-size: 13px !important;
+    }
+
+    body, p, blockquote, ul, ol, dl, table, pre, code, tr {
+        color: rgba(214, 222, 235, 255.0);
+    }
+
+    a {
+        color: rgba(126, 87, 194, 255.0);
+    }
+
+    table td, table th {
+        border: 1px solid rgba(214, 222, 235, 255.0);
+    }
+
+    hr {
+        background-color: rgba(214, 222, 235, 255.0);
+    }
+
+    kbd, tr {
+        border: 1px solid rgba(214, 222, 235, 255.0);
+    }
+
+    h6 {
+        color: rgba(95, 126, 151, 255.0);
+    }
+
+    blockquote {
+        border-left: 2px solid rgba(126, 87, 194, 0.4);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(126, 194, 87, 0.7529411764705882);
+    }
+
+    blockquote, code, pre {
+        background-color: rgba(212, 222, 231, 0.09803921568627451);
+    }</style>
+</head>
+<body>
+<div class="container">
+    <div md-src-pos="0..13075">
+        <div id="top"></div>
+        <p md-src-pos="22..104"></p>
+        <h1 align="center"><span md-src-pos="41..55" style="font-size: xxx-large;color:#5f974c">HY-359 Project</span>
+        </h1>
+        <h3 align="center"><span md-src-pos="80..99" style="font-size: xx-large">Personalized Health</span></h3>
+        <p></p>
+        <p align="center"><a href="https://hy359.herokuapp.com/"><strong>Go to site »</strong></a> <br> <a
+                href="https://github.com/casede/Hy359v1"><strong>Explore the docs »</strong></a> <br> <span>Iosif Felekidis</span>
+            · <span>4062</span> · <span>2021-2022</span></p>
+        <details style="padding-top: 100px !important;">
+            <summary>Table of Contents</summary>
+            <ol>
+                <li><a href="#about-the-project">About The Project</a>
+                    <ul>
+                        <li><a href="#built-with">Built With</a></li>
+                    </ul>
+                </li>
+                <li><a href="#details">Details</a>
+                    <ul>
+                        <li><a href="#tasks">Tasks</a></li>
+                        <li><a href="#implementation">Implementation</a>
+                            <ol>
+                                <li><a href="#database">Database</a></li>
+                                <li><a href="#java">Java</a>
+                                    <ul>
+                                        <li><a href="#dao">DAO</a></li>
+                                        <li><a href="#database-manipulation">Database Manipulation</a></li>
+                                        <li><a href="#session-tracking">Session Tracking</a></li>
+                                        <li><a href="#servlets">Servlets</a></li>
+                                        <li><a href="#jsp">JSP</a></li>
+                                        <li><a href="#security">Security</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#front-end">Front End</a>
+                                    <ul>
+                                        <li><a href="#index">Index</a></li>
+                                        <li><a href="#datatables">DataTables</a></li>
+                                        <li><a href="#css">Css</a></li>
+                                        <li><a href="#html">Html</a></li>
+                                        <li><a href="#js">Js</a></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#usage">Usage</a></li>
+            </ol>
+        </details>
+        <h2 md-src-pos="2050..2070" id="about-the-project">About The Project</h2>
+        <p md-src-pos="2072..2179"><span md-src-pos="2072..2134">For some stupid reason I decided to do a two-man project alone</span>
+            <span md-src-pos="2135..2138">¯\_</span>(<span md-src-pos="2139..2140">ツ</span>)_<span
+                    md-src-pos="2142..2145">/¯.</span> <span
+                    md-src-pos="2146..2179">This is what I managed to create.</span></p>
+        <p md-src-pos="2181..2345"><span
+                md-src-pos="2181..2235">Personalized Health is a maven structured java webapp.</span> <span
+                md-src-pos="2236..2292">Its purpose is to give to the client and doctor a way of</span> <span
+                md-src-pos="2293..2345">communication with appointment booking and messages.</span></p><br>
+        <p md-src-pos="2347..2458"><span md-src-pos="2347..2406">If you want to check out the webapp I deployed it in heroku</span>
+            <a href="https://hy359.herokuapp.com/" md-src-pos="2407..2458">Personalized Health</a>.</p>
+        <p>You can create a new user or log in with:</p>
+        <ul>
+            <li>Client:
+                <ul>
+                    <li>username: mountanton</li>
+                    <li>password: 123456</li>
+                </ul>
+            </li>
+            <li>Doctor:
+                <ul>
+                    <li>username: papadakis</li>
+                    <li>password: doctor12*</li>
+                </ul>
+            </li>
+            <li>Admin:
+                <ul>
+                    <li>username: admin</li>
+                    <li>password: admin</li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+        <h3 md-src-pos="2516..2530" id="built-with">Built With</h3>
+        <p md-src-pos="2532..2542"><span md-src-pos="2532..2541">Front End</span>:</p>
+        <ul md-src-pos="2544..2713">
+            <li md-src-pos="2544..2590"><a href="https://getbootstrap.com/" md-src-pos="2546..2590">Bootstrap-4.6.0</a>
+            </li>
+            <li md-src-pos="2591..2627"><a href="https://jquery.com" md-src-pos="2593..2627">JQuery-3.5.1</a></li>
+            <li md-src-pos="2628..2667"><a href="https://datatables.net/" md-src-pos="2630..2667">DataTables</a></li>
+            <li md-src-pos="2668..2713"><a href="https://fontawesome.com/" md-src-pos="2670..2713">FontAwesome-4.7</a>
+            </li>
+        </ul>
+        <p md-src-pos="2715..2724"><span md-src-pos="2715..2723">Back End</span>:</p>
+        <ul md-src-pos="2726..2761">
+            <li md-src-pos="2726..2761"><a href="https://www.mysql.com/" md-src-pos="2728..2761">MySQL-8</a></li>
+        </ul>
+        <p md-src-pos="2763..2775"><span md-src-pos="2763..2774">Web Hosting</span>:</p>
+        <ul md-src-pos="2777..2848">
+            <li md-src-pos="2777..2812"><a href="https://www.heroku.com/" md-src-pos="2779..2812">Heroku</a></li>
+            <li md-src-pos="2813..2848"><a href="https://www.jawsdb.com/" md-src-pos="2815..2848">JawsDB</a></li>
+        </ul>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+        <h1 md-src-pos="2905..2914" id="details">Details</h1>
+        <p md-src-pos="2916..2957"><span md-src-pos="2916..2956">The main functionalities implemented are</span>:</p>
+        <ul md-src-pos="2959..3065">
+            <li md-src-pos="2959..2978">User registration</li>
+            <li md-src-pos="2979..3000">Find Doctor near me</li>
+            <li md-src-pos="3001..3047">Rendezvous handling for both user and doctor</li>
+            <li md-src-pos="3048..3065">Message sending</li>
+        </ul>
+        <p md-src-pos="3067..3154"><em md-src-pos="3067..3151">I didn't have time to make anything that had to do with
+            Treatment and Examination.</em> <span md-src-pos="3152..3154">ð¥</span></p>
+        <h2 md-src-pos="3156..3164" id="tasks">Tasks</h2>
+        <p md-src-pos="3166..3220"><strong md-src-pos="3166..3220">Based on the project tasks, for each type of
+            user:</strong></p>
+        <ul md-src-pos="3222..3334">
+            <li md-src-pos="3222..3334">For Visitor:
+                <ul md-src-pos="3239..3334">
+                    <li md-src-pos="3239..3334">2/2 tasks:
+                        <ul md-src-pos="3260..3334">
+                            <li md-src-pos="3260..3300">Find doctor without near me sorting.</li>
+                            <li md-src-pos="3307..3334">General info in footer.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="3337..3472">
+            <li md-src-pos="3337..3472">For Admin:
+                <ul md-src-pos="3352..3472">
+                    <li md-src-pos="3352..3472">3/3 tasks:
+                        <ul md-src-pos="3373..3472">
+                            <li md-src-pos="3373..3383">Login.</li>
+                            <li md-src-pos="3390..3445">See clients and doctors and be able to delete them.</li>
+                            <li md-src-pos="3452..3472">Certify doctors.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="3475..3893">
+            <li md-src-pos="3475..3893">For Clients:
+                <ul md-src-pos="3492..3893">
+                    <li md-src-pos="3492..3810">4/6 tasks done:
+                        <ul md-src-pos="3518..3810">
+                            <li md-src-pos="3518..3587">Register, Login, see his fitness health and see/edit his
+                                details.
+                            </li>
+                            <li md-src-pos="3594..3672">Find doctors near me and sort them based on distance or duration
+                                or price.
+                            </li>
+                            <li md-src-pos="3679..3737">Book appointment and notify or get notified on cancel.</li>
+                            <li md-src-pos="3744..3810">Message to/from doctor when at least one appointment was done.
+                            </li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="3813..3893">tasks undone:
+                        <ul md-src-pos="3837..3893">
+                            <li md-src-pos="3837..3855">Exam register.</li>
+                            <li md-src-pos="3862..3893">Compare treatment and exam.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="3896..4230">
+            <li md-src-pos="3896..4230">For Doctors:
+                <ul md-src-pos="3913..4230">
+                    <li md-src-pos="3913..4145">3/5 tasks done:
+                        <ul md-src-pos="3939..4145">
+                            <li md-src-pos="3939..4008">Register, Login, see his fitness health and see/edit his
+                                details.
+                            </li>
+                            <li md-src-pos="4015..4074">Rendezvous handling. See, create, cancel, mark as done.</li>
+                            <li md-src-pos="4081..4145">Message to/from user when at least one appointment was done.
+                            </li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="4148..4230">tasks undone:
+                        <ul md-src-pos="4172..4230">
+                            <li md-src-pos="4172..4206">See user's examination history</li>
+                            <li md-src-pos="4213..4230">New treatment</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="4233..4257">
+            <li md-src-pos="4233..4257">Didn't do bonus tasks.</li>
+        </ul>
+        <ul md-src-pos="4260..4481">
+            <li md-src-pos="4260..4481">Extra functionalities:
+                <ul md-src-pos="4287..4481">
+                    <li md-src-pos="4287..4346">Send notifications to user when he has unread messages.</li>
+                    <li md-src-pos="4349..4481">Medical APIs in footer for all users:
+                        <ul md-src-pos="4397..4481">
+                            <li md-src-pos="4397..4432">COVID-19 stats today in Greece.</li>
+                            <li md-src-pos="4439..4481">Medical news (with Google search API).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+        <h2 md-src-pos="4483..4500" id="implementation">Implementation</h2>
+        <h3 md-src-pos="4502..4514" id="database">Database</h3>
+        <div align="center">
+            <img src="images/database_diagram.png" alt="Database">
+        </div>
+        <ul md-src-pos="4604..4940">
+            <li md-src-pos="4604..4635">User, Doctor
+                <ul md-src-pos="4621..4635">
+                    <li md-src-pos="4621..4635">no changes</li>
+                </ul>
+            </li>
+            <li md-src-pos="4636..4693">Rendezvous
+                <ul md-src-pos="4651..4693">
+                    <li md-src-pos="4651..4693">changed <code md-src-pos="4663..4674">date_time</code> to type <code
+                            md-src-pos="4683..4693">DATETIME</code></li>
+                </ul>
+            </li>
+            <li md-src-pos="4694..4846">Message
+                <ul md-src-pos="4706..4846">
+                    <li md-src-pos="4706..4770">removed foreign key constraint for <code md-src-pos="4745..4756">doctor_id</code>
+                        and <code md-src-pos="4761..4770">user_id</code></li>
+                    <li md-src-pos="4773..4846">added new col <code md-src-pos="4791..4805">seen TINYINT</code>, tracks
+                        if message has been seen or not.
+                    </li>
+                </ul>
+            </li>
+            <li md-src-pos="4847..4940">Conversation
+                <ul md-src-pos="4864..4940">
+                    <li md-src-pos="4864..4877">new table</li>
+                    <li md-src-pos="4880..4940">usage: keep track which users have talked to each other.</li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+        <h3 md-src-pos="4942..4950" id="java">Java</h3>
+        <h4 md-src-pos="4952..4960" id="dao">DAO</h4>
+        <ul md-src-pos="4962..5104">
+            <li md-src-pos="4962..4968">User</li>
+            <li md-src-pos="4969..4977">Doctor</li>
+            <li md-src-pos="4978..4990">SimpleUser</li>
+            <li md-src-pos="4991..5002">Randevouz</li>
+            <li md-src-pos="5003..5049">Message
+                <ul md-src-pos="5015..5049">
+                    <li md-src-pos="5015..5049">added new variable <code md-src-pos="5038..5048">int seen</code>:</li>
+                </ul>
+            </li>
+            <li md-src-pos="5050..5104">Conversation
+                <ul md-src-pos="5067..5104">
+                    <li md-src-pos="5067..5104">new model for conversation table.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 md-src-pos="5106..5132" id="database-manipulation">Database Manipulation</h4>
+        <p md-src-pos="5134..5250"><span md-src-pos="5134..5151">Done with classes</span> <code md-src-pos="5152..5174">Edit&lt;tableName&gt;Table</code><span
+                md-src-pos="5174..5175">.</span> <span md-src-pos="5176..5233">They implement getters and setters for database elements,</span>
+            <span md-src-pos="5234..5250">run queries ect.</span></p>
+        <h4 md-src-pos="5252..5273" id="session-tracking">Session Tracking</h4>
+        <p md-src-pos="5275..5469"><span md-src-pos="5275..5319">Done with HTTPSession API with two variables</span>
+            <code md-src-pos="5320..5330">loggedIn</code><span md-src-pos="5330..5331">=</span><code
+                    md-src-pos="5331..5343">"username"</code> <span md-src-pos="5344..5347">and</span> <code
+                    md-src-pos="5348..5358">userType</code><span md-src-pos="5358..5359">=</span><code
+                    md-src-pos="5359..5369">"doctor"</code> <span md-src-pos="5370..5372">or</span> <code
+                    md-src-pos="5373..5381">"user"</code> <span md-src-pos="5382..5384">or</span> <code
+                    md-src-pos="5385..5394">"admin"</code><span md-src-pos="5394..5395">.</span> <br> <em
+                    md-src-pos="5401..5466">I know it's not the safest way to do it, but it makes life easy</em> <span
+                    md-src-pos="5467..5469">ð</span></p>
+        <h4 md-src-pos="5471..5484" id="servlets">Servlets</h4>
+        <p md-src-pos="5486..6025"><span md-src-pos="5486..5571">There are 23 total servlets in the webapp each of them handles a GET or POST request.</span>
+            <span md-src-pos="5572..5601">They are called with AJAX and</span> <span md-src-pos="5602..5657">always receive json formatted data if they handle POST.</span>
+            <span md-src-pos="5658..5692">Their main objective is to create,</span> <span md-src-pos="5693..5719">update or return data from</span>
+            <span md-src-pos="5720..5820">the database to the client using database manipulation classes and formatting the results as needed.</span>
+            <span md-src-pos="5821..5828">Some of</span> <span md-src-pos="5829..5833">them</span> <code
+                    md-src-pos="5834..5853">DoctorListForUser</code> <span md-src-pos="5854..5880">do HttpOK request to APIs.</span>
+            <span md-src-pos="5881..5973">Their functionalities are pretty straightforward by their names and the javascript functions</span>
+            <span md-src-pos="5974..6009">that call them have the same names.</span> <span md-src-pos="6010..6024">In more detail</span>:
+        </p>
+        <ol md-src-pos="6027..8265">
+            <li md-src-pos="6027..6067"><code md-src-pos="6030..6044">AdminCertify</code>: Admin Certify Doctor.</li>
+            <li md-src-pos="6068..6104"><code md-src-pos="6071..6084">AdminDelete</code>: Admin Delete User.</li>
+            <li md-src-pos="6105..6217"><code md-src-pos="6108..6124">BookRendezvous</code>: User mark rendezvous as
+                selected, Send message to doctor that a user selected a rendezvous.
+            </li>
+            <li md-src-pos="6218..6505"><code md-src-pos="6221..6239">CancelRendezvous</code>: Invoked by User or
+                Doctor, User marks rendezvous as free and removes user_info and user_id from Rendezvous table. Doctor
+                Deletes rendezvous from Rendezvous table. Sends message to the other doctor or user notifying them that
+                the rendezvous has been canceled.
+            </li>
+            <li md-src-pos="6506..6591"><code md-src-pos="6509..6528">CheckAvailability</code>: Checks if username,
+                email and AMKA values are already in use.
+            </li>
+            <li md-src-pos="6592..6721"><code md-src-pos="6595..6614">DoctorListForUser</code>: Returns the json info of
+                all certified doctors plus their distance and duration from the current user.
+            </li>
+            <li md-src-pos="6722..6880"><code md-src-pos="6725..6743">DoctorRendezvous</code>: Returns all rendezvous of
+                the current doctor and removes rendezvous that have status equal to free and are expired (datetime &lt;
+                now).
+            </li>
+            <li md-src-pos="6881..6927"><code md-src-pos="6884..6896">DoctorList</code>: return all certified Doctors.
+            </li>
+            <li md-src-pos="6928..6979"><code md-src-pos="6931..6947">DoneRendezvous</code>: Set Rendezvous status to
+                done.
+            </li>
+            <li md-src-pos="6980..7057"><code md-src-pos="6984..6994">isLogged</code>: Check session attributes to see
+                if user is already logged in.
+            </li>
+            <li md-src-pos="7058..7392"><code md-src-pos="7062..7069">Login</code>: Check user credentials (username,
+                password). If credentials are incorrect return with status code 401. If credentials are correct but
+                doctor is not certified return with status code 403. If credentials are correct set session attributes
+                username and userType and return json (username, userType, success message).
+            </li>
+            <li md-src-pos="7393..7426"><code md-src-pos="7397..7405">Logout</code>: Invalidate session.</li>
+            <li md-src-pos="7427..7497"><code md-src-pos="7431..7444">MessageSeen</code>: Mark messages as seen, set
+                Message table seen to 1.
+            </li>
+            <li md-src-pos="7498..7604"><code md-src-pos="7502..7517">NewRendezvous</code>: Create new rendezvous,
+                status will be set to free, user_id to 0, user_info to 'null'.
+            </li>
+            <li md-src-pos="7605..7656"><code md-src-pos="7609..7622">SendMessage</code>: Create new Message row in
+                table.
+            </li>
+            <li md-src-pos="7657..7714"><code md-src-pos="7661..7683">ShowAvailableDoctors</code>: return all certified
+                Doctors.
+            </li>
+            <li md-src-pos="7715..7814"><code md-src-pos="7719..7744">ShowAvailableRendezvous</code>: return all
+                rendezvous with status free for only one specific doctor.
+            </li>
+            <li md-src-pos="7815..7905"><code md-src-pos="7819..7838">StartConversation</code>: Create new Conversation
+                row and send a hello message to receiver.
+            </li>
+            <li md-src-pos="7906..7968"><code md-src-pos="7910..7918">Submit</code>: Submit signup form, Create new
+                client or doctor.
+            </li>
+            <li md-src-pos="7969..8014"><code md-src-pos="7973..7981">Update</code>: Update doctor's or user's info.
+            </li>
+            <li md-src-pos="8015..8084"><code md-src-pos="8019..8031">updateInit</code>: returns all doctor's or user's
+                info in json format.
+            </li>
+            <li md-src-pos="8085..8181"><code md-src-pos="8089..8110">UpdateNotifications</code>: returns the number of
+                unread messages for the current doctor or user.
+            </li>
+            <li md-src-pos="8182..8265"><code md-src-pos="8186..8206">UserListRendezvous</code>: return all rendezvous
+                of the current user in json format.
+            </li>
+        </ol>
+        <h4 md-src-pos="8267..8275" id="jsp">JSP</h4>
+        <p md-src-pos="8277..8654"><span md-src-pos="8277..8316">There are 5 jsp files and most of them,</span> <span
+                md-src-pos="8317..8325">3 out 5,</span> <span md-src-pos="8326..8346">are just a setup for</span> <a
+                href="#DataTables" md-src-pos="8347..8372">dataTables</a> <span
+                md-src-pos="8373..8384">so they don</span>'<span md-src-pos="8385..8395">t have any</span> <span
+                md-src-pos="8396..8406">java code,</span> <span md-src-pos="8407..8427">I know such a waste,</span>
+            <span md-src-pos="8428..8508">but since I discovered dataTables it was so much easier to let it fill the table</span>
+            <span md-src-pos="8509..8523">automatically.</span> <code md-src-pos="8524..8538">Messages.jsp</code> <span
+                    md-src-pos="8539..8587">java code sets up the chatting between users and</span> <code
+                    md-src-pos="8588..8608">adminUserTable.jsp</code> <span
+                    md-src-pos="8609..8628">dynamically creates</span> <span md-src-pos="8629..8654">the tables for the admin.</span>
+        </p>
+        <h4 md-src-pos="8656..8669" id="security">Security</h4>
+        <p md-src-pos="8671..8741"><em md-src-pos="8671..8727">none! <q>Everything is permitted, Nothing is
+            true.</q></em> <strong md-src-pos="8728..8741"><em md-src-pos="8730..8739">t(-_-t)</em></strong></p>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+        <h3 md-src-pos="8743..8756" id="front-end">Front End</h3>
+        <h4 md-src-pos="8758..8768" id="index">Index</h4>
+        <p md-src-pos="8770..9007"><code md-src-pos="8770..8782">Index.html</code> <span md-src-pos="8783..8793">has a nav,</span>
+            <span md-src-pos="8794..8838">a main container that is empty and a footer.</span> <br> <span
+                    md-src-pos="8844..8879">The nav contains a list of buttons,</span> <span md-src-pos="8880..8961">on the left there are user based action buttons and on the right account buttons,</span>
+            <span md-src-pos="8962..9002">that are the same between doctor/client.</span> <br></p>
+        <p md-src-pos="9009..9021"><span md-src-pos="9009..9020">Nav Buttons</span>:</p>
+        <ul md-src-pos="9023..9606">
+            <li md-src-pos="9023..9388">Left nav
+                <ul md-src-pos="9036..9388">
+                    <li md-src-pos="9036..9214">For users:
+                        <ul md-src-pos="9057..9214">
+                            <li md-src-pos="9057..9148"><code md-src-pos="9061..9070">Doctors</code>: load to main
+                                container all certified doctors sorted by distance or duration.
+                            </li>
+                            <li md-src-pos="9155..9214"><code md-src-pos="9159..9171">Rendezvous</code>: load to main
+                                container user's rendezvous.
+                            </li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="9217..9301">For doctors:
+                        <ul md-src-pos="9240..9301">
+                            <li md-src-pos="9240..9301"><code md-src-pos="9244..9256">Rendezvous</code>: load to main
+                                container doctor's rendezvous.
+                            </li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="9304..9388">For visitors:
+                        <ul md-src-pos="9328..9388">
+                            <li md-src-pos="9328..9388"><code md-src-pos="9332..9341">Doctors</code>: load to main
+                                container all certified doctors.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li md-src-pos="9389..9606">Right nav
+                <ul md-src-pos="9403..9606">
+                    <li md-src-pos="9403..9548">For users and doctors:
+                        <ul md-src-pos="9436..9548">
+                            <li md-src-pos="9436..9478"><code md-src-pos="9440..9446">user</code>: show user details and
+                                fitness.
+                            </li>
+                            <li md-src-pos="9485..9528"><code md-src-pos="9489..9495">bell</code>: show notification
+                                modal window.
+                            </li>
+                            <li md-src-pos="9535..9548"><code md-src-pos="9539..9548">log out</code></li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="9551..9606">For visitors:
+                        <ul md-src-pos="9575..9606">
+                            <li md-src-pos="9575..9586"><code md-src-pos="9579..9586">login</code></li>
+                            <li md-src-pos="9593..9606"><code md-src-pos="9597..9606">sign in</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p md-src-pos="9608..9639"><span md-src-pos="9608..9639">For admin only a logout button.</span></p>
+        <p md-src-pos="9641..9724"><span md-src-pos="9641..9700">All html and jsp files are loaded inside the main container</span>
+            (<span md-src-pos="9702..9708">except</span> <code md-src-pos="9709..9722">signup.html</code>)<span
+                    md-src-pos="9723..9724">.</span></p>
+        <p md-src-pos="9726..9924"><span md-src-pos="9726..9753">The Footer contains 4 cols,</span> <span
+                md-src-pos="9754..9773">the first has today</span>'<span
+                md-src-pos="9774..9791">s Covid-19 stats,</span> <span
+                md-src-pos="9792..9814">the second some links,</span> <span md-src-pos="9815..9840">the third loads the top 3</span>
+            <span md-src-pos="9841..9924">medical news in Greece from Google and the final contains some random contact info.</span>
+        </p>
+        <h4 md-src-pos="9926..9941" id="datatables">DataTables</h4>
+        <p md-src-pos="9943..10290"><span md-src-pos="9943..9976">DataTables is a tool that styles,</span> <span
+                md-src-pos="9977..10061">adds many functions like search and sorting and fills tables automatically from ajax</span>
+            <span md-src-pos="10062..10070">request.</span> <span md-src-pos="10071..10162">It does an ajax request and fills the tables rows based the json response from the servlet.</span>
+            <span md-src-pos="10163..10184">I only had to specify</span> <span md-src-pos="10185..10206">the servlet it calls.</span>
+            <span md-src-pos="10207..10286">Most of the data in this app is shown in tables and DataTables makes it so easy</span>
+            <span md-src-pos="10287..10290">ð.</span></p>
+        <h4 md-src-pos="10292..10300" id="css">Css</h4>
+        <ul md-src-pos="10302..10364">
+            <li md-src-pos="10302..10333"><code md-src-pos="10304..10314">home.css</code>: for everything ð</li>
+            <li md-src-pos="10334..10364"><code md-src-pos="10336..10347">style.css</code>: for signup form</li>
+        </ul>
+        <h4 md-src-pos="10366..10375" id="html">Html</h4>
+        <ul md-src-pos="10377..10485">
+            <li md-src-pos="10377..10405"><code md-src-pos="10379..10392">signup.html</code>: signup form</li>
+            <li md-src-pos="10406..10432"><code md-src-pos="10408..10420">login.html</code>: login form</li>
+            <li md-src-pos="10433..10485"><code md-src-pos="10435..10454">user_details.html</code>: fitness and user
+                details form
+            </li>
+        </ul>
+        <h4 md-src-pos="10487..10494" id="js">Js</h4>
+        <ul md-src-pos="10496..10967">
+            <li md-src-pos="10496..10575"><code md-src-pos="10498..10509">script.js</code>: main script for <code
+                    md-src-pos="10527..10540">signup.html</code>, handles user registration actions
+            </li>
+            <li md-src-pos="10576..10664"><code md-src-pos="10578..10594">checkSubmit.js</code>: script for <code
+                    md-src-pos="10607..10620">signup.html</code>, checks for duplicates while user signs in.
+            </li>
+            <li md-src-pos="10665..10719"><code md-src-pos="10667..10675">map.js</code>: script for <code
+                    md-src-pos="10688..10701">signup.html</code>, handles map API.
+            </li>
+            <li md-src-pos="10720..10793"><code md-src-pos="10722..10731">home.js</code>: main script for <code
+                    md-src-pos="10749..10761">index.html</code> handles nav and footer actions.
+            </li>
+            <li md-src-pos="10794..10851"><code md-src-pos="10796..10816">userListDoctors.js</code>: script for <code
+                    md-src-pos="10829..10850">userListDoctors.jsp</code>.
+            </li>
+            <li md-src-pos="10852..10907"><code md-src-pos="10854..10873">userRendezvous.js</code>: script for <code
+                    md-src-pos="10886..10906">userRendezvous.jsp</code>.
+            </li>
+            <li md-src-pos="10908..10967"><code md-src-pos="10910..10931">doctorRendezvous.js</code>: script for <code
+                    md-src-pos="10944..10966">doctorRendezvous.jsp</code>.
+            </li>
+        </ul>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+        <h2 md-src-pos="10969..10977" id="usage">Usage</h2>
+        <p md-src-pos="10979..10988"><em md-src-pos="10979..10988">Actions</em></p>
+        <ul md-src-pos="10990..11241">
+            <li md-src-pos="10990..11241">Life for a visitor:
+                <ul md-src-pos="11014..11241">
+                    <li md-src-pos="11014..11241"><code md-src-pos="11018..11024">nav:</code>
+                        <ul md-src-pos="11031..11241">
+                            <li md-src-pos="11031..11073"><code md-src-pos="11035..11044">Doctors</code>: show all
+                                certified doctors.
+                            </li>
+                            <li md-src-pos="11080..11192"><code md-src-pos="11084..11092">Log in</code>: show login
+                                form.
+                                <ul md-src-pos="11121..11192">
+                                    <li md-src-pos="11121..11192"><code md-src-pos="11125..11133">LOG IN</code>: log to
+                                        system, the nav buttons change based on user type.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li md-src-pos="11199..11241"><code md-src-pos="11203..11212">Sign up</code>: sends you to
+                                register form.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="11244..11842">
+            <li md-src-pos="11244..11842">Life for a doctor:
+                <ul md-src-pos="11267..11842">
+                    <li md-src-pos="11267..11842"><code md-src-pos="11271..11277">nav:</code>
+                        <ul md-src-pos="11284..11842">
+                            <li md-src-pos="11284..11842"><code md-src-pos="11288..11300">Rendezvous</code>: show all
+                                your rendezvous.
+                                <ul md-src-pos="11338..11842">
+                                    <li md-src-pos="11338..11496"><code md-src-pos="11342..11347">New</code>: create new
+                                        rendezvous. A form will pop up.
+                                        <ul md-src-pos="11406..11496">
+                                            <li md-src-pos="11406..11496"><code md-src-pos="11410..11418">Create</code>:
+                                                fill the form to create a status free rendezvous with the specified
+                                                details.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li md-src-pos="11507..11588"><code md-src-pos="11511..11517">Done</code>: set the
+                                        selected rendezvous as done, free status rendezvous excluded.
+                                    </li>
+                                    <li md-src-pos="11599..11677"><code md-src-pos="11603..11611">Cancel</code>: cancel
+                                        the selected rendezvous, done status rendezvous excluded.
+                                    </li>
+                                    <li md-src-pos="11688..11842"><code md-src-pos="11692..11700">Export</code>: export
+                                        all rendezvous selected to PDF, if none are selected export all. If you want to
+                                        filter them you can use the search bar.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="11845..12496">
+            <li md-src-pos="11845..12496">Life for a user:
+                <ul md-src-pos="11866..12496">
+                    <li md-src-pos="11866..12496"><code md-src-pos="11870..11875">nav</code>:
+                        <ul md-src-pos="11883..12496">
+                            <li md-src-pos="11883..12277"><code md-src-pos="11887..11896">Doctors</code>: show all
+                                certified doctors and sort them based on their distance from your location.
+                                <ul md-src-pos="11993..12277">
+                                    <li md-src-pos="11993..12277"><code md-src-pos="11997..12014">Book Rendezvous</code>:
+                                        show all available rendezvous for the selected doctor.
+                                        <ul md-src-pos="12085..12277">
+                                            <li md-src-pos="12085..12277"><code md-src-pos="12089..12111">on rendezvous select</code>: show a text area to write extra comments for the doctor.
+                                                <ul md-src-pos="12188..12277">
+                                                    <li md-src-pos="12188..12277"><code
+                                                            md-src-pos="12192..12198">Book</code>: book rendezvous.
+                                                        After few seconds the popup window will close automatically.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li md-src-pos="12284..12496"><code md-src-pos="12288..12300">Rendezvous</code>: show all
+                                your rendezvous
+                                <ul md-src-pos="12337..12496">
+                                    <li md-src-pos="12337..12407"><code md-src-pos="12341..12355">Send message</code>:
+                                        If the rendezvous is done, send message to doctor.
+                                    </li>
+                                    <li md-src-pos="12418..12496"><code md-src-pos="12422..12430">Cancel</code>: cancel
+                                        the selected rendezvous, done status rendezvous excluded.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul md-src-pos="12499..13020">
+            <li md-src-pos="12499..13020">Shared user and doctor actions:
+                <ul md-src-pos="12535..13020">
+                    <li md-src-pos="12535..12667"><code md-src-pos="12539..12548">Profile</code>: show all your details
+                        and fitness health.
+                        <ul md-src-pos="12598..12667">
+                            <li md-src-pos="12598..12667"><code md-src-pos="12602..12610">Update</code>: if any changes
+                                were made to the form fields change info
+                            </li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="12670..12980"><code md-src-pos="12674..12680">Bell</code>: show notifications pop
+                        up, if any new notifications bell will be red.
+                        <ul md-src-pos="12758..12980">
+                            <li md-src-pos="12758..12980"><code md-src-pos="12762..12771">See all</code>: show all your conversations, if a conversation has an unread message it will change style.
+                                <ul md-src-pos="12874..12980">
+                                    <li md-src-pos="12874..12980"><code md-src-pos="12878..12902">on conversation select</code>: show all messages, every conversation has a chat except the one
+                                        with System.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li md-src-pos="12983..13020"><code md-src-pos="12987..12996">Log Out</code>: log out of the system.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">(<a href="#top">back to top</a>)</p>
+    </div>
+</div>&lt;/
+</body>
+</html>

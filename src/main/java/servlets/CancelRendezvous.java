@@ -13,6 +13,13 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Invoked by User or Doctor,
+ * - User mark rendezvous as free and removes user_info and user_id from Rendezvous table
+ * - Doctor Deletes rendezvous from Rendezvous table
+ * - Sends message to the other doctor or user notifying them that the rendezvous has been canceled
+ */
+
 @WebServlet(name = "CancelRendezvous", value = "/CancelRendezvous")
 public class CancelRendezvous extends HttpServlet {
     @Override

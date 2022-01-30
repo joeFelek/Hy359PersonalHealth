@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+/**
+ * returns all doctor's or user's info in json format
+ */
 @WebServlet(name = "updateInit", value = "/updateInit")
 public class updateInit extends HttpServlet {
     @Override
@@ -21,7 +24,7 @@ public class updateInit extends HttpServlet {
         EditSimpleUserTable eut = new EditSimpleUserTable();
         EditDoctorTable edt = new EditDoctorTable();
         try {
-            String res = null;
+            String res;
             if (userType.equals("doctor"))
                 res = edt.databaseToDoctor(username);
             else

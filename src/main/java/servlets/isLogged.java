@@ -10,6 +10,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Check session attributes to see if user is already logged in
+ */
 @WebServlet(name = "isLogged", value = "/isLogged")
 public class isLogged extends HttpServlet {
 
@@ -25,7 +28,7 @@ public class isLogged extends HttpServlet {
             out.print(jo);
         }
         else{
-            response.setStatus(403);
+            response.setStatus(100);
         }
     }
 

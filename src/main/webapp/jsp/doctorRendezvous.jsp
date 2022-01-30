@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group" id="Price">
                     <label for="price">Price</label>
-                    <input type="number" name="price" id="price" class="form-control" required>
+                    <input type="number" name="price" id="price" class="form-control" min="20" max="80" required>
                 </div>
                 <p id="newRendezvous-msg"></p>
                 <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Create">

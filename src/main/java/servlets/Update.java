@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Update doctor's or user's info
+ */
 @WebServlet(name = "Update", value = "/Update")
 public class Update extends HttpServlet {
 

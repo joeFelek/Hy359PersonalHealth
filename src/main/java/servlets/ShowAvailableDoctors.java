@@ -14,6 +14,9 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * return all certified Doctors
+ */
 @WebServlet(name = "ShowAvailableDoctors", value = "/ShowAvailableDoctors")
 public class ShowAvailableDoctors extends HttpServlet {
     @Override

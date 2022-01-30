@@ -12,6 +12,11 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * User mark rendezvous as selected
+ * Send message to doctor that a user selected a rendezvous
+ */
+
 @WebServlet(name = "BookRendezvous", value = "/BookRendezvous")
 public class BookRendezvous extends HttpServlet {
     @Override

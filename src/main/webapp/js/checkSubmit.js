@@ -1,11 +1,10 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     $('#username-error-msg').hide()
     $('#email-error-msg').hide()
     $('#amka-error-msg').hide()
 
     $('#username, #email, #amka').change(function () {
-        let id = $(this).attr('id')
         checkAvailable($(this))
     });
 
@@ -18,7 +17,7 @@ $(document).ready(function() {
     function checkAvailable(element) {
         let id = element.attr('id')
         const data = {};
-        data[""+id] = element.val()
+        data["" + id] = element.val()
         if ($('#doctor').is(':checked'))
             data["userType"] = $('#doctor').val()
         else
@@ -31,20 +30,20 @@ $(document).ready(function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 if (id === "username") {
                     $('#username-error-msg').hide()
-                }else if(id === "email") {
+                } else if (id === "email") {
                     $('#email-error-msg').hide()
-                }else {
+                } else {
                     $('#amka-error-msg').hide()
                 }
-            }else if (xhr.status === 403) {
+            } else if (xhr.status === 403) {
                 if (id === "username") {
                     $('#username-error-msg').show()
-                }else if(id === "email") {
+                } else if (id === "email") {
                     $('#email-error-msg').show()
-                }else {
+                } else {
                     $('#amka-error-msg').show()
                 }
-            }else if (xhr.status !== 200) {
+            } else if (xhr.status !== 200) {
                 alert('Request failed. Returned status of ' + xhr.status);
             }
         };

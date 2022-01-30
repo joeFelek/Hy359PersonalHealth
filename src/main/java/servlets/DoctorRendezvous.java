@@ -19,6 +19,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+/**
+ * Returns all rendezvous of the current doctor and
+ * removes rendezvous that have status equal to free and are expired (datetime < now)
+ */
+
 @WebServlet(name = "DoctorRendezvous", value = "/DoctorRendezvous")
 public class DoctorRendezvous extends HttpServlet {
     @Override

@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+/**
+ * returns the number of unread messages for the current doctor or user
+ */
 @WebServlet(name = "UpdateNotifications", value = "/UpdateNotifications")
 public class UpdateNotifications extends HttpServlet {
     @Override

@@ -11,6 +11,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Set Rendezvous status to done
+ */
 @WebServlet(name = "DoneRendezvous", value = "/DoneRendezvous")
 public class DoneRendezvous extends HttpServlet {
 

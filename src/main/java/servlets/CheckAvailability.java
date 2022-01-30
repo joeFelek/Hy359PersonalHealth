@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Checks if username, email and AMKA values are already in use
+ */
+
 @WebServlet(name = "CheckAvailability", value = "/CheckAvailability")
 public class CheckAvailability extends HttpServlet {
 

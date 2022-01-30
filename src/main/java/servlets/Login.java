@@ -14,6 +14,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+/**
+ * Check user credentials (username, password)
+ * - If credentials are incorrect return with status code 401
+ * - If credentials are correct but doctor is not certified return with status code 403
+ * - If credentials are correct set session attributes username and userType
+ * and return json (username, userType, success message)
+ */
+
 @WebServlet(name = "Login", value = "/Login")
 public class Login extends HttpServlet {
 

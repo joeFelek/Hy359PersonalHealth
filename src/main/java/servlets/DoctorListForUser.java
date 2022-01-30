@@ -19,6 +19,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Returns the json info of all certified doctors plus their distance and duration from the current user
+ */
+
 @WebServlet(name = "DoctorListForUser", value = "/DoctorListForUser")
 public class DoctorListForUser extends HttpServlet {
     @Override
