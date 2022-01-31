@@ -28,7 +28,7 @@ public class isLogged extends HttpServlet {
             out.print(jo);
         }
         else{
-            response.setStatus(100);
+            response.setStatus(204);
         }
     }
 

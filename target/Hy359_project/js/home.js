@@ -392,6 +392,7 @@ $(document).ready(function () {
         xhr.setRequestHeader("x-proxy-location", "EU");
         xhr.setRequestHeader("x-rapidapi-host", "google-search3.p.rapidapi.com");
         xhr.setRequestHeader("x-rapidapi-key", "2f121f595bmsh790b45bdee800eap12ab30jsn5834493fb370");
+        xhr.setRequestHeader("x-user-agent", "desktop");
 
         xhr.send(data);
     })
