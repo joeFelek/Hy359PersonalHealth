@@ -5,11 +5,6 @@ import database.tables.EditSimpleUserTable;
 
 public class InitDatabase {
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        InitDatabase init = new InitDatabase();
-        init.addToDatabaseExamples();
-    }
-
     public void addToDatabaseExamples() throws ClassNotFoundException {
         //Users
         String userJSON = "{\"username\":\"mountanton\",\"email\":\"mike@mike.com\",\"password\":\"123456\","
