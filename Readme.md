@@ -5,7 +5,7 @@
   <p align="center">
     <a href="https://hy359.herokuapp.com/"><strong>Go to site »</strong></a>
     <br />
-    <a href="https://github.com/casede/Hy359v1"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/casede/Hy359PersonalHealth"><strong>Explore the docs »</strong></a>
     <br />
     <span>Iosif Felekidis</span>
     ·
