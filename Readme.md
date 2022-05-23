@@ -106,7 +106,7 @@ The main functionalities implemented are:
 * Rendezvous handling for both user and doctor
 * Message sending
 
-_I didn't have time to make anything that had to do with Treatment and Examination._ 😥
+
 
 ## Tasks
 
@@ -145,8 +145,6 @@ _I didn't have time to make anything that had to do with Treatment and Examinati
         * See user's examination history
         * New treatment
 
-
-* Didn't do bonus tasks.
 
 
 * Extra functionalities:
