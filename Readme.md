@@ -72,9 +72,7 @@ For some stupid reason I decided to do a two-man project alone ¯\_(ツ)_/¯. Th
 Personalized Health is a maven structured java webapp. Its purpose is to give the client and doctor a way of
 communication with appointment booking and real-time chatting.
 
-If you want to check out the webapp I deployed it in heroku [Personalized Health](https://hy359-personal-health.herokuapp.com/)
-
-(Current site status is Up!!✅) 
+If you want to check out the webapp I deployed it in heroku [Personalized Health](https://hy359-personal-health.herokuapp.com/)(Current site status is Up!!✅) 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
