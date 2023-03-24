@@ -3,7 +3,7 @@
 <h2 align="center">HY-359 Project</h2>
 <h3 align="center">Personalized Health</h3>
   <p align="center">
-    <a href="https://hy359.herokuapp.com/"><strong>Go to site »</strong></a>
+    <a href="https://hy359-personal-health.herokuapp.com/"><strong>Go to site »</strong></a>
     <br />
     <a href="https://github.com/joeFelek/Hy359PersonalHealth"><strong>Explore the docs »</strong></a>
     <br />
@@ -69,12 +69,12 @@
 
 For some stupid reason I decided to do a two-man project alone ¯\_(ツ)_/¯. This is what I managed to create.
 
-Personalized Health is a maven structured java webapp. Its purpose is to give to the client and doctor a way of
-communication with appointment booking and messages.
+Personalized Health is a maven structured java webapp. Its purpose is to give the client and doctor a way of
+communication with appointment booking and real-time chatting.
 
-If you want to check out the webapp I deployed it in heroku [Personalized Health](https://hy359.herokuapp.com/)
+If you want to check out the webapp I deployed it in heroku [Personalized Health](https://hy359-personal-health.herokuapp.com/)
 
-Heroku isn't free anymore and I am broke as fuck so the site isn't working 😢
+(Current site status is Up!!✅) 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
