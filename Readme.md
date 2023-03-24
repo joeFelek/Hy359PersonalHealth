@@ -74,6 +74,19 @@ communication with appointment booking and real-time chatting.
 
 If you want to check out the webapp I deployed it in heroku [Personalized Health](https://hy359-personal-health.herokuapp.com/)(Current site status is Up!!✅) 
 
+You are free to modify anything you want. Here are some already registered users:
+* Normal User: 
+    * ___username___: mountanton 
+    * ___password___: 123456
+* Doctors: 
+    * ___username___: papadakis 
+    * ___password___: doctor12*
+    
+    <br>
+    
+    * ___username___: stefanos 
+    * ___password___: abcd12$3
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
